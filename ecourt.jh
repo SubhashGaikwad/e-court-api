@@ -92,7 +92,7 @@ entity UserAccess {
 
 enum AccessLevel {
     ADMIN(Admin),
-    User(User) 
+    USER(User) 
 }
 entity SecurityRole {
 	name String required unique
@@ -112,7 +112,7 @@ relationship ManyToOne {
     UserAccess{securityUser(login)} to SecurityUser   
 }
 relationship OneToMany {
-	CourtCase{hearing} to Hearing{courtCase}
+	CourtCase{hearings} to Hearing
    
 }
 

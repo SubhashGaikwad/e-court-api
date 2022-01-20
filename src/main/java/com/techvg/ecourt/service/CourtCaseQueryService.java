@@ -193,10 +193,10 @@ public class CourtCaseQueryService extends QueryService<CourtCase> {
             if (criteria.getLastModified() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getLastModified(), CourtCase_.lastModified));
             }
-            if (criteria.getHearingId() != null) {
+            if (criteria.getHearingsId() != null) {
                 specification =
                     specification.and(
-                        buildSpecification(criteria.getHearingId(), root -> root.join(CourtCase_.hearings, JoinType.LEFT).get(Hearing_.id))
+                        buildSpecification(criteria.getHearingsId(), root -> root.join(CourtCase_.hearings, JoinType.LEFT).get(Hearing_.id))
                     );
             }
         }

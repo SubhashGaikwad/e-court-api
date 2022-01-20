@@ -2962,28 +2962,28 @@ class CourtCaseResourceIT {
 
     @Test
     @Transactional
-    void getAllCourtCasesByHearingIsEqualToSomething() throws Exception {
+    void getAllCourtCasesByHearingsIsEqualToSomething() throws Exception {
         // Initialize the database
         courtCaseRepository.saveAndFlush(courtCase);
-        Hearing hearing;
+        Hearing hearings;
         if (TestUtil.findAll(em, Hearing.class).isEmpty()) {
-            hearing = HearingResourceIT.createEntity(em);
-            em.persist(hearing);
+            hearings = HearingResourceIT.createEntity(em);
+            em.persist(hearings);
             em.flush();
         } else {
-            hearing = TestUtil.findAll(em, Hearing.class).get(0);
+            hearings = TestUtil.findAll(em, Hearing.class).get(0);
         }
-        em.persist(hearing);
+        em.persist(hearings);
         em.flush();
-        courtCase.addHearing(hearing);
+        courtCase.addHearings(hearings);
         courtCaseRepository.saveAndFlush(courtCase);
-        Long hearingId = hearing.getId();
+        Long hearingsId = hearings.getId();
 
-        // Get all the courtCaseList where hearing equals to hearingId
-        defaultCourtCaseShouldBeFound("hearingId.equals=" + hearingId);
+        // Get all the courtCaseList where hearings equals to hearingsId
+        defaultCourtCaseShouldBeFound("hearingsId.equals=" + hearingsId);
 
-        // Get all the courtCaseList where hearing equals to (hearingId + 1)
-        defaultCourtCaseShouldNotBeFound("hearingId.equals=" + (hearingId + 1));
+        // Get all the courtCaseList where hearings equals to (hearingsId + 1)
+        defaultCourtCaseShouldNotBeFound("hearingsId.equals=" + (hearingsId + 1));
     }
 
     /**

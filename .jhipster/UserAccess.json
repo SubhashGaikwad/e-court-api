@@ -4,7 +4,7 @@
     {
       "fieldName": "level",
       "fieldType": "AccessLevel",
-      "fieldValues": "ADMIN (Admin),User (User)"
+      "fieldValues": "ADMIN (Admin),USER (User)"
     },
     {
       "fieldName": "accessId",

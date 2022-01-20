@@ -63,7 +63,7 @@
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "courtCase",
-      "otherEntityRelationshipName": "hearing",
+      "otherEntityRelationshipName": "hearings",
       "relationshipName": "courtCase"
     }
   ],

@@ -5,7 +5,7 @@ package com.techvg.ecourt.domain.enumeration;
  */
 public enum AccessLevel {
     ADMIN("Admin"),
-    User;
+    USER("User");
 
     private final String value;
 

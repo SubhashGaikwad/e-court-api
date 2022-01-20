@@ -37,7 +37,7 @@ import org.springframework.transaction.annotation.Transactional;
 class UserAccessResourceIT {
 
     private static final AccessLevel DEFAULT_LEVEL = AccessLevel.ADMIN;
-    private static final AccessLevel UPDATED_LEVEL = AccessLevel.User;
+    private static final AccessLevel UPDATED_LEVEL = AccessLevel.USER;
 
     private static final Long DEFAULT_ACCESS_ID = 1L;
     private static final Long UPDATED_ACCESS_ID = 2L;
