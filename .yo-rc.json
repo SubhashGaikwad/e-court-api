@@ -42,7 +42,9 @@
     "clientTheme": "none",
     "clientThemeVariant": "",
     "reactive": false,
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": ["CourtCase", "Hearing", "SecurityUser", "UserAccess", "SecurityRole", "SecurityPermission"],
+    "lastLiquibaseTimestamp": 1642660661000
   },
   "git-provider": "GitHub",
   "git-company": "SubhashGaikwad",
