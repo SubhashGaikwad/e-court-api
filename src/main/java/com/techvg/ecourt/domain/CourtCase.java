@@ -609,13 +609,13 @@ public class CourtCase implements Serializable {
         return this;
     }
 
-    public CourtCase addHearing(Hearing hearing) {
+    public CourtCase addHearings(Hearing hearing) {
         this.hearings.add(hearing);
         hearing.setCourtCase(this);
         return this;
     }
 
-    public CourtCase removeHearing(Hearing hearing) {
+    public CourtCase removeHearings(Hearing hearing) {
         this.hearings.remove(hearing);
         hearing.setCourtCase(null);
         return this;

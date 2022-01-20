@@ -144,7 +144,7 @@
       "relationshipType": "one-to-many",
       "otherEntityName": "hearing",
       "otherEntityRelationshipName": "courtCase",
-      "relationshipName": "hearing"
+      "relationshipName": "hearings"
     }
   ],
   "entityTableName": "court_case",

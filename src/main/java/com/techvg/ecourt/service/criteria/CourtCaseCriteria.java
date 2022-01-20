@@ -113,7 +113,7 @@ public class CourtCaseCriteria implements Serializable, Criteria {
 
     private StringFilter lastModified;
 
-    private LongFilter hearingId;
+    private LongFilter hearingsId;
 
     private Boolean distinct;
 
@@ -155,7 +155,7 @@ public class CourtCaseCriteria implements Serializable, Criteria {
         this.freefield3 = other.freefield3 == null ? null : other.freefield3.copy();
         this.lastModifiedBy = other.lastModifiedBy == null ? null : other.lastModifiedBy.copy();
         this.lastModified = other.lastModified == null ? null : other.lastModified.copy();
-        this.hearingId = other.hearingId == null ? null : other.hearingId.copy();
+        this.hearingsId = other.hearingsId == null ? null : other.hearingsId.copy();
         this.distinct = other.distinct;
     }
 
@@ -689,19 +689,19 @@ public class CourtCaseCriteria implements Serializable, Criteria {
         this.lastModified = lastModified;
     }
 
-    public LongFilter getHearingId() {
-        return hearingId;
+    public LongFilter getHearingsId() {
+        return hearingsId;
     }
 
-    public LongFilter hearingId() {
-        if (hearingId == null) {
-            hearingId = new LongFilter();
+    public LongFilter hearingsId() {
+        if (hearingsId == null) {
+            hearingsId = new LongFilter();
         }
-        return hearingId;
+        return hearingsId;
     }
 
-    public void setHearingId(LongFilter hearingId) {
-        this.hearingId = hearingId;
+    public void setHearingsId(LongFilter hearingsId) {
+        this.hearingsId = hearingsId;
     }
 
     public Boolean getDistinct() {
@@ -757,7 +757,7 @@ public class CourtCaseCriteria implements Serializable, Criteria {
             Objects.equals(freefield3, that.freefield3) &&
             Objects.equals(lastModifiedBy, that.lastModifiedBy) &&
             Objects.equals(lastModified, that.lastModified) &&
-            Objects.equals(hearingId, that.hearingId) &&
+            Objects.equals(hearingsId, that.hearingsId) &&
             Objects.equals(distinct, that.distinct)
         );
     }
@@ -800,7 +800,7 @@ public class CourtCaseCriteria implements Serializable, Criteria {
             freefield3,
             lastModifiedBy,
             lastModified,
-            hearingId,
+            hearingsId,
             distinct
         );
     }
@@ -844,7 +844,7 @@ public class CourtCaseCriteria implements Serializable, Criteria {
             (freefield3 != null ? "freefield3=" + freefield3 + ", " : "") +
             (lastModifiedBy != null ? "lastModifiedBy=" + lastModifiedBy + ", " : "") +
             (lastModified != null ? "lastModified=" + lastModified + ", " : "") +
-            (hearingId != null ? "hearingId=" + hearingId + ", " : "") +
+            (hearingsId != null ? "hearingsId=" + hearingsId + ", " : "") +
             (distinct != null ? "distinct=" + distinct + ", " : "") +
             "}";
     }
