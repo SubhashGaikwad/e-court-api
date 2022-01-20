@@ -48,6 +48,19 @@ public class CacheConfiguration {
             createCache(cm, com.techvg.ecourt.domain.User.class.getName());
             createCache(cm, com.techvg.ecourt.domain.Authority.class.getName());
             createCache(cm, com.techvg.ecourt.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.techvg.ecourt.domain.CourtCase.class.getName());
+            createCache(cm, com.techvg.ecourt.domain.CourtCase.class.getName() + ".hearings");
+            createCache(cm, com.techvg.ecourt.domain.Hearing.class.getName());
+            createCache(cm, com.techvg.ecourt.domain.SecurityUser.class.getName());
+            createCache(cm, com.techvg.ecourt.domain.SecurityUser.class.getName() + ".securityPermissions");
+            createCache(cm, com.techvg.ecourt.domain.SecurityUser.class.getName() + ".securityRoles");
+            createCache(cm, com.techvg.ecourt.domain.UserAccess.class.getName());
+            createCache(cm, com.techvg.ecourt.domain.SecurityRole.class.getName());
+            createCache(cm, com.techvg.ecourt.domain.SecurityRole.class.getName() + ".securityPermissions");
+            createCache(cm, com.techvg.ecourt.domain.SecurityRole.class.getName() + ".securityUsers");
+            createCache(cm, com.techvg.ecourt.domain.SecurityPermission.class.getName());
+            createCache(cm, com.techvg.ecourt.domain.SecurityPermission.class.getName() + ".securityRoles");
+            createCache(cm, com.techvg.ecourt.domain.SecurityPermission.class.getName() + ".securityUsers");
             // jhipster-needle-ehcache-add-entry
         };
     }

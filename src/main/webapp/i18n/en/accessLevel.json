@@ -1,0 +1,9 @@
+{
+  "ecourtapiApp": {
+    "AccessLevel": {
+      "null": "",
+      "ADMIN": "Admin",
+      "User": "User"
+    }
+  }
+}
