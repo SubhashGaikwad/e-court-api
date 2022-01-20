@@ -1,0 +1,138 @@
+entity CourtCase {
+	caseNo String,
+    villageName String,
+    accuserName String,
+    applicationNo String,
+    landReferenceNo String, 
+    firstAppeal String,
+    amount String,
+    projectName String,  
+    courtName String,
+    defendantName String,
+    caseDescription String,
+    caseFilingDate Instant,
+    totalClaimAmount String,
+    caseOfficer String,
+    caselawyer String,
+    nextHearingDate Instant,
+    amountDepositeInCourt String,
+    lar String,
+    incCompensation String,
+    amountPaidSLO String,
+    chequeNo String,
+    chequeDate Instant,
+    appealNo String,
+    courtAmount String,
+    appealAmount String,
+    appealDate Instant,
+	description String,
+	comment String ,
+	status Status,
+	freefield1 String,
+	freefield2 String,
+	freefield3 String,
+    lastModifiedBy String,
+    lastModified String
+}
+
+entity Hearing {
+	hearingDate Instant,
+	nextHearingDate Instant,
+	description String,
+	previousHearingDate Instant,
+	conclusion String,
+	comment String,
+	status Status,
+	freefield1 String,
+	freefield2 String,
+	freefield3 String,
+	freefield4 String,
+	freefield5 String,
+    lastModifiedBy String,
+    lastModified String,
+}
+
+enum Status {
+    OPEN(Open),
+    HEARING(Hearing),
+    NEXT_HEARING(NextHearing),
+    AWAITING(Awaiting),
+    CLOSED(Closed),
+    CONCLUDED(Concluded),
+    SUSPENDED(Suspended)
+}
+
+
+entity SecurityUser {
+    firstName String
+    lastName String
+    designation String
+    login String required unique
+    passwordHash String required
+	email String unique
+    imageUrl String
+    activated Boolean required
+    langKey String
+    activationKey String
+    resetKey String
+    resetDate Instant
+	mobileNo String
+	oneTimePassword String
+	otpExpiryTime Instant
+    lastModified Instant required
+	lastModifiedBy String required
+}
+
+entity UserAccess {
+    level AccessLevel
+    accessId Long
+    lastModified Instant required
+	lastModifiedBy String required
+}
+
+enum AccessLevel {
+    ADMIN(Admin),
+    User(User) 
+}
+entity SecurityRole {
+	name String required unique
+	description String
+    lastModified Instant required
+	lastModifiedBy String required
+}
+
+entity SecurityPermission {
+	name String required unique
+	description String
+    lastModified Instant required
+	lastModifiedBy String required
+}
+
+relationship ManyToOne {     
+    UserAccess{securityUser(login)} to SecurityUser   
+}
+relationship OneToMany {
+	CourtCase{hearing} to Hearing{courtCase}
+   
+}
+
+relationship ManyToMany {
+  SecurityRole{securityPermission(name)} to SecurityPermission{securityRole(name)},
+  SecurityUser{securityPermission(name)} to SecurityPermission{securityUser(login)},
+  SecurityUser{securityRole(name)} to SecurityRole{securityUser(login)}
+ 
+}
+
+// Set pagination options
+paginate * with infinite-scroll
+paginate * with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service * with serviceClass
+
+filter *
+// Set an angular suffix
+// angularSuffix * with tvg
